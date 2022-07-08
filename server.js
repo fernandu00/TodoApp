@@ -12,10 +12,10 @@ app.use(express.static(__dirname + '/static'));
 
 // set the view engine
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:true}))
 
 // connect to the database mongodb://localhost/todo1
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect(process.env.DATABASE || 3000, {
     useNewUrlParser:true, useUnifiedTopology:true
 })
 // renders todos
